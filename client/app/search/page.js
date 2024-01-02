@@ -12,7 +12,7 @@ const RawHTML = () => {
     const search = searchParams.get('query')
     useEffect(() => {
         const fetchHtml = async () => {
-            const response = await fetch(`http://localhost:3001/api/fetch?url=${search}`);
+            const response = await fetch(`https://medium-unlocker-manav147.azurewebsites.net/api/fetch?url=${search}`);
             const htmlString = await response.text();
             const parser = new DOMParser();
 
@@ -42,19 +42,7 @@ const RawHTML = () => {
         <div className='w-full'>
             {/* heading */}
             <h1 className="text-3xl font-semibold mb-4">Medium Explorer</h1>
-            <input
-                type="text"
-                placeholder="Enter URL"
-                className="w-full border border-gray-300 p-2 mb-4 rounded"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-            />
-            <button
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue w-full"
-                onClick={handleExtract}
-            >
-                Extract
-            </button>
+
             <div dangerouslySetInnerHTML={{ __html: html }} />
 
         </div>
