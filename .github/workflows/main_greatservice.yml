@@ -53,4 +53,4 @@ jobs:
           app-name: 'greatservice'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EEEF584C190E4888B0B43DA02980587D }}
-          package: ./backend
+          package: .
