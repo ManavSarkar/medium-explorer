@@ -15,6 +15,9 @@ app.use(cors(
 
 ));
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 app.get("/api/fetch", async (req, res) => {
     const originalUrl = req.query.url;
     console.log(originalUrl);
